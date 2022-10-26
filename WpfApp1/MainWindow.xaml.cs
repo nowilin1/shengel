@@ -26,6 +26,9 @@ namespace WpfApp1
             InitializeComponent();
             //MainFrame.Navigate(new Page1());
             Manager.MainFrame = MainFrame;
+
+            //Importsupplier();
+
         }
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
