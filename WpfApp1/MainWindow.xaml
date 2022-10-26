@@ -16,8 +16,11 @@
         <Grid Grid.Row="0" Background="#FFC1C1">
             <Label Content="Большая пачка" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" FontFamily="Verdana" FontSize="25"/>
             <Image HorizontalAlignment="Left" Height="36" Margin="5" VerticalAlignment="Center" Width="79" Source="/Большая пачка.png"/>
+            <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Top" Click="ButtonBack_Click" FontFamily="Verdana" Foreground="White" FontSize="15"/>
         </Grid>
-        <Grid Grid.Row="1" Background="#FFFFFF"></Grid>
+        <Grid Grid.Row="1" Background="#FFFFFF">
+            <Frame Content="Frame" Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        </Grid>
         <Grid Grid.Row="2" Background="#FFC1C1"></Grid>
 
     </Grid>

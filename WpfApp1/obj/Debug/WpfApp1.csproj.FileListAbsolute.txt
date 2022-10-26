@@ -30,3 +30,6 @@ C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\WpfApp1.csproj.Genera
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\Page1.g.cs
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\Page1.baml
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\App.baml

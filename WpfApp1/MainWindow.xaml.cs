@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -23,6 +24,25 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            //MainFrame.Navigate(new Page1());
+            Manager.MainFrame = MainFrame;
         }
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
+        }
+        //private void MainFrame_ContentRendered(object sender, EventArgs e)
+        //{
+        //    if (MainFrame.CanGoBack)
+        //    {
+        //        ButtonBack.Visibility = Visibility.Visible;
+        //    }
+        //    else
+        //    {
+        //        ButtonBack.Visibility = Visibility.Hidden;
+        //    }
+        //}
+
+
     }
 }
