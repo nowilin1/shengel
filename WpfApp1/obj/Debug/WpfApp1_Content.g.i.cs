@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("%d0%91%d0%be%d0%bb%d1%8c%d1%88%d0%b0%d1%8f%20%d0%bf%d0%b0%d1%87%d0%ba%d0%b0.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bigbase.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bigbase.tt")]
 
 

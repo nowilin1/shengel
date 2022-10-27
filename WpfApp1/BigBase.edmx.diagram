@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0ed95a5759504f988b10f06414c124f3" Name="Diagram1">
+        <EntityTypeShape EntityType="bigbaseModel.sysdiagram" Width="1.5" PointX="7.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.User" Width="1.5" PointX="9.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Агент" Width="1.5" PointX="14.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Аналитик" Width="1.5" PointX="17.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Доставка" Width="1.5" PointX="19" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Заказ_материалов" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Заявка" Width="1.5" PointX="16.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.История" Width="1.5" PointX="19.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.История_поставок" Width="1.5" PointX="10" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Каталог_готовой_продукции" Width="1.5" PointX="12.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Мастер_производства" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Материалы" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Менеджер" Width="1.5" PointX="14.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Поставщик" Width="1.5" PointX="7.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Предложение_для_агента" Width="1.5" PointX="12.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Продукция" Width="1.5" PointX="10" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Склад" Width="1.5" PointX="12.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Смена" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Сотрудники" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Статистика_по_сотруднику" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Точка_подажи" Width="1.5" PointX="17.5" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Турникет" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bigbaseModel.Цех" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="bigbaseModel.FK_Агент_Каталог_готовой_продукции" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Агент_Предложение_для_агента" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Заявка_Агент" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_История_Агент" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_История_Аналитик" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Доставка_Заявка" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Заказ_материалов_Мастер_производства" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Заказ_материалов_Материалы" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Заявка_Менеджер" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_История_Точка_подажи" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_История_поставок_Поставщик" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Каталог_готовой_продукции_Продукция" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Мастер_производства_Смена" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Продукция_Поставщик" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Склад_Продукция" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Сотрудники_Смена" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Сотрудники_Цех" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Статистика_по_сотруднику_Сотрудники" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Турникет_Сотрудники" ManuallyRouted="false" />
+        <AssociationConnector Association="bigbaseModel.FK_Статистика_по_сотруднику_Турникет" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
