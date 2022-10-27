@@ -35,3 +35,10 @@ C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\Page1.baml
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\App.baml
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\Materials.g.cs
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\Materials.baml
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\bin\Debug\EntityFramework.dll
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\bin\Debug\EntityFramework.xml
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\WpfApp1_Content.g.cs
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete

@@ -20,6 +20,7 @@
         </Grid>
         <Grid Grid.Row="1" Background="#FFFFFF">
             <Frame Content="Frame" Name="MainFrame" NavigationUIVisibility="Hidden"/>
+            <Button x:Name="ButtonMat" Content="Материалы" HorizontalAlignment="Left" Margin="70,81,0,0" VerticalAlignment="Top" Foreground="White" Click="ButtonMat_Click"/>
         </Grid>
         <Grid Grid.Row="2" Background="#FFC1C1"></Grid>
 
