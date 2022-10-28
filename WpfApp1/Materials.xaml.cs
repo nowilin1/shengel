@@ -23,6 +23,9 @@ namespace WpfApp1
         public Materials()
         {
             InitializeComponent();
+
+            var currentTours = bigbaseEntities.GetContext().Материалы.ToList();
+            LViewTours.ItemsSource = currentTours;
         }
 
         private void TBoxSearch_TextChanged(object sender, TextChangedEventArgs e)

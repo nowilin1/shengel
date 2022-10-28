@@ -13,35 +13,36 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Name="LViewTours" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" >
+        <ListView Grid.Row="1" Name="LViewTours" >
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"></WrapPanel>
+                    <WrapPanel Orientation="Vertical" HorizontalAlignment="Left"></WrapPanel>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="20" Width="400">
+                    <Grid Margin="5" Width="800">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="70"></RowDefinition>
-                            <RowDefinition Height="310"></RowDefinition>
+                            <RowDefinition Height="10"></RowDefinition>
+                            <RowDefinition Height="200"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Image Width="400" Grid.Row="1" Stretch="UniformToFill" HorizontalAlignment="Center" Margin="5">
+                        <Image Width="250" Grid.Row="1" Stretch="Fill" HorizontalAlignment="Left">
                             <Image.Source>
                                 <Binding Path="Изображение">
                                     <Binding.TargetNullValue>
-                                        <ImageSource>Resources/picture.png</ImageSource>
+                                        
+                                        <ImageSource>Resources\picture.png</ImageSource>
                                     </Binding.TargetNullValue>
                                 </Binding>
                             </Image.Source>
                         </Image>
-                        <TextBlock Text="{Binding Наименование_материала}"  VerticalAlignment="Center" TextAlignment="Center" Width="390"
-                                   TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5 5" FontSize="26" Grid.Row="0"></TextBlock>
-                        <TextBlock Text="{Binding Цена}"  Grid.Row="2" Margin="5 5 5 15" HorizontalAlignment="Center" FontSize="26" FontWeight="Bold"></TextBlock>
-                        <TextBlock Text="{Binding TicketsCount, StringFormat={} Билетов осталось: {0} }" Grid.Row="3" HorizontalAlignment="Right" FontSize="14" ></TextBlock>
-                        <TextBlock Text="{Binding ActualText}" Grid.Row="3" HorizontalAlignment="Left" FontSize="14"></TextBlock>
+                        <TextBlock Text="{Binding Наименование_материала}" Margin="5 5 5 15" VerticalAlignment="Top" TextAlignment="Right" Width="430"
+                                   TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="26" Grid.Row="1"  ></TextBlock>
+                        <TextBlock Text="{Binding Тип_материала}" Width="250" VerticalAlignment="Top" Grid.Row="1" Margin="5 5 5 15" HorizontalAlignment="Stretch" FontSize="26"></TextBlock>
+                        <TextBlock Text="{Binding Минимальное_количество, StringFormat={} Минимальное количество: {0} }" Width="527" TextAlignment="Justify" VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Right" FontSize="17" Margin="5 5 5 70" ></TextBlock>
+                        <TextBlock Text="{Binding Единица_измерения, StringFormat={} Единица измерения: {0}}" Width="447" Margin="85" Grid.Row="1" HorizontalAlignment="Right" FontSize="17"></TextBlock>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -35,18 +35,19 @@ namespace WpfApp1
         {
 
             //var fileData = File.ReadAllLines(@"\\FSProfile1.biik.ad.biik.ru\Redirect\shengeliya\Desktop\Вариант 1\Сессия 1\supplier_k_import.txt");
-            //var images = Directory.GetFiles(@"\\FSProfile1.biik.ad.biik.ru\Redirect\shengeliya\Desktop\Вариант 1\Сессия 1\materials");
+            var images = Directory.GetFiles(@"C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\
+");
             ////foreach (var line in fileData)
             ////{
             ////    var data = line.Split('\t');
-            //var tempTour = new Материалы();
+            var tempTour = new Материалы();
             ////    {
             ////        Name = data[0].Replace("\"", ""),
             ////        TicketsCount = int.Parse(data[2]),
             ////        Price = decimal.Parse(data[3]),
             ////        IsActual = (data[4] == "0") ? false : true
             ////    };
-            //tempTour.Изображение = File.ReadAllBytes(images.FirstOrDefault(p => p.Contains(tempTour.Наименование_материала)));
+            tempTour.Изображение = File.ReadAllBytes(images.FirstOrDefault(p => p.Contains(tempTour.Наименование_материала)));
             //}
         }
             private void ButtonBack_Click(object sender, RoutedEventArgs e)
