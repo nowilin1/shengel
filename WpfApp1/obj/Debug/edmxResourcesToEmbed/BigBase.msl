@@ -70,7 +70,7 @@
           <ScalarProperty Name="ID_Заказа_материалов" ColumnName="ID_Заказа_материалов" />
           <ScalarProperty Name="ID_Материалы" ColumnName="ID_Материалы" />
           <ScalarProperty Name="Тип_материала" ColumnName="Тип_материала" />
-          <ScalarProperty Name="Заказанное_кол_во_ед_материала" ColumnName="Заказанное_кол-во_ед_материала" />
+          <ScalarProperty Name="Заказанное_кол_во_ед_материала" ColumnName="Заказанное_кол_во_ед_материала" />
           <ScalarProperty Name="ID_Мастера" ColumnName="ID_Мастера" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -162,8 +162,10 @@
         <MappingFragment StoreEntitySet="Поставщик">
           <ScalarProperty Name="ID_Поставщика" ColumnName="ID_Поставщика" />
           <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+          <ScalarProperty Name="Тип_поставщика" ColumnName="Тип_поставщика" />
           <ScalarProperty Name="ИНН" ColumnName="ИНН" />
-          <ScalarProperty Name="Тип_занятости" ColumnName="Тип_занятости" />
+          <ScalarProperty Name="Рейтинг_качества" ColumnName="Рейтинг_качества" />
+          <ScalarProperty Name="Дата_начала_работы_с_поставщиком" ColumnName="Дата_начала_работы_с_поставщиком" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

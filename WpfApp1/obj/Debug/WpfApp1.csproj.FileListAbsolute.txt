@@ -42,3 +42,5 @@ C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\bin\Debug\EntityFramework.SqlSe
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\bin\Debug\ru\EntityFramework.resources.dll
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\WpfApp1_Content.g.cs
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\Suppliner.g.cs
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\Suppliner.baml

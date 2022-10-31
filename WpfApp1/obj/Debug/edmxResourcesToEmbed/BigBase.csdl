@@ -170,8 +170,10 @@
     </Key>
     <Property Name="ID_Поставщика" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Наименование" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ИНН" Type="Int32" />
-    <Property Name="Тип_занятости" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Тип_поставщика" Type="Int32" />
+    <Property Name="ИНН" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Рейтинг_качества" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Дата_начала_работы_с_поставщиком" Type="DateTime" Precision="0" />
     <NavigationProperty Name="История_поставок" Relationship="Self.FK_История_поставок_Поставщик" FromRole="Поставщик" ToRole="История_поставок" />
     <NavigationProperty Name="Продукция" Relationship="Self.FK_Продукция_Поставщик" FromRole="Поставщик" ToRole="Продукция" />
   </EntityType>

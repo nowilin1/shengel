@@ -70,7 +70,7 @@
           <Property Name="ID_Заказа_материалов" Type="int" Nullable="false" />
           <Property Name="ID_Материалы" Type="int" />
           <Property Name="Тип_материала" Type="nvarchar(max)" />
-          <Property Name="Заказанное_кол-во_ед_материала" Type="nchar" MaxLength="10" />
+          <Property Name="Заказанное_кол_во_ед_материала" Type="nchar" MaxLength="10" />
           <Property Name="ID_Мастера" Type="int" />
         </EntityType>
         <EntityType Name="Заявка">
@@ -154,8 +154,10 @@
           </Key>
           <Property Name="ID_Поставщика" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Наименование" Type="nvarchar(max)" />
-          <Property Name="ИНН" Type="int" />
-          <Property Name="Тип_занятости" Type="nvarchar(max)" />
+          <Property Name="Тип_поставщика" Type="int" />
+          <Property Name="ИНН" Type="nchar" MaxLength="10" />
+          <Property Name="Рейтинг_качества" Type="nvarchar(max)" />
+          <Property Name="Дата_начала_работы_с_поставщиком" Type="date" />
         </EntityType>
         <EntityType Name="Предложение для агента">
           <Key>
@@ -804,8 +806,10 @@
           </Key>
           <Property Name="ID_Поставщика" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Наименование" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ИНН" Type="Int32" />
-          <Property Name="Тип_занятости" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Тип_поставщика" Type="Int32" />
+          <Property Name="ИНН" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Рейтинг_качества" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Дата_начала_работы_с_поставщиком" Type="DateTime" Precision="0" />
           <NavigationProperty Name="История_поставок" Relationship="Self.FK_История_поставок_Поставщик" FromRole="Поставщик" ToRole="История_поставок" />
           <NavigationProperty Name="Продукция" Relationship="Self.FK_Продукция_Поставщик" FromRole="Поставщик" ToRole="Продукция" />
         </EntityType>
@@ -1383,7 +1387,7 @@
                 <ScalarProperty Name="ID_Заказа_материалов" ColumnName="ID_Заказа_материалов" />
                 <ScalarProperty Name="ID_Материалы" ColumnName="ID_Материалы" />
                 <ScalarProperty Name="Тип_материала" ColumnName="Тип_материала" />
-                <ScalarProperty Name="Заказанное_кол_во_ед_материала" ColumnName="Заказанное_кол-во_ед_материала" />
+                <ScalarProperty Name="Заказанное_кол_во_ед_материала" ColumnName="Заказанное_кол_во_ед_материала" />
                 <ScalarProperty Name="ID_Мастера" ColumnName="ID_Мастера" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1475,8 +1479,10 @@
               <MappingFragment StoreEntitySet="Поставщик">
                 <ScalarProperty Name="ID_Поставщика" ColumnName="ID_Поставщика" />
                 <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+                <ScalarProperty Name="Тип_поставщика" ColumnName="Тип_поставщика" />
                 <ScalarProperty Name="ИНН" ColumnName="ИНН" />
-                <ScalarProperty Name="Тип_занятости" ColumnName="Тип_занятости" />
+                <ScalarProperty Name="Рейтинг_качества" ColumnName="Рейтинг_качества" />
+                <ScalarProperty Name="Дата_начала_работы_с_поставщиком" ColumnName="Дата_начала_работы_с_поставщиком" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

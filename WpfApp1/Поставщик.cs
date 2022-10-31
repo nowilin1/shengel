@@ -23,8 +23,10 @@ namespace WpfApp1
     
         public int ID_Поставщика { get; set; }
         public string Наименование { get; set; }
-        public Nullable<int> ИНН { get; set; }
-        public string Тип_занятости { get; set; }
+        public Nullable<int> Тип_поставщика { get; set; }
+        public string ИНН { get; set; }
+        public string Рейтинг_качества { get; set; }
+        public Nullable<System.DateTime> Дата_начала_работы_с_поставщиком { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<История_поставок> История_поставок { get; set; }

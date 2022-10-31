@@ -7,46 +7,44 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Materials">
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <ListView Grid.Row="1" Name="LViewTours" >
-            <ListView.ItemsPanel>
+            <!--<ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Vertical" HorizontalAlignment="Left"></WrapPanel>
                 </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
+            </ListView.ItemsPanel>-->
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="5" Width="800">
-                        <Grid.RowDefinitions>
+                    <Grid Margin="20" Width="800">
+                        <!--<Grid.RowDefinitions>
                             <RowDefinition Height="10"></RowDefinition>
                             <RowDefinition Height="200"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Image Width="250" Grid.Row="1" Stretch="Fill" HorizontalAlignment="Left">
+                        </Grid.RowDefinitions>-->
+                        <Image Width="150" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
                             <Image.Source>
                                 <Binding Path="Изображение">
                                     <Binding.TargetNullValue>
-                                        
                                         <ImageSource>Resources\picture.png</ImageSource>
                                     </Binding.TargetNullValue>
                                 </Binding>
                             </Image.Source>
                         </Image>
-                        <TextBlock Text="{Binding Наименование_материала}" Margin="5 5 5 15" VerticalAlignment="Top" TextAlignment="Right" Width="430"
+                        <TextBlock Text="{Binding Наименование_материала}" Margin="5 5 5 15" VerticalAlignment="Top" TextAlignment="Right" Width="250"
                                    TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="26" Grid.Row="1"  ></TextBlock>
-                        <TextBlock Text="{Binding Тип_материала}" Width="250" VerticalAlignment="Top" Grid.Row="1" Margin="5 5 5 15" HorizontalAlignment="Stretch" FontSize="26"></TextBlock>
-                        <TextBlock Text="{Binding Минимальное_количество, StringFormat={} Минимальное количество: {0} }" Width="527" TextAlignment="Justify" VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Right" FontSize="17" Margin="5 5 5 70" ></TextBlock>
-                        <TextBlock Text="{Binding Единица_измерения, StringFormat={} Единица измерения: {0}}" Width="447" Margin="85" Grid.Row="1" HorizontalAlignment="Right" FontSize="17"></TextBlock>
+                        <TextBlock Text="{Binding Тип_материала}" Width="460" VerticalAlignment="Top" Grid.Row="1" Margin="5 5 5 15" HorizontalAlignment="Stretch" FontSize="26"></TextBlock>
+                        <TextBlock Text="|" Width="240" VerticalAlignment="Top" Grid.Row="1" Margin="5 5 5 15" HorizontalAlignment="Stretch" FontSize="26"></TextBlock>
+                        <TextBlock Text="{Binding Минимальное_количество, StringFormat={} Минимальное количество: {0} }" Width="620" TextAlignment="Justify" VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Right" FontSize="17" Margin="5 5 5 70" ></TextBlock>
+                        <TextBlock Text="{Binding Единица_измерения, StringFormat={} Единица измерения: {0}}" Width="540" Margin="85" Grid.Row="1" HorizontalAlignment="Right" FontSize="17"></TextBlock>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
     </Grid>
 </Page>

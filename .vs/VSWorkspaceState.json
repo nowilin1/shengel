@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WpfApp1"
+    "\\WpfApp1",
+    "\\WpfApp1\\Properties"
   ],
-  "SelectedNode": "\\WpfApp1\\MainWindow.xaml.cs",
+  "SelectedNode": "\\WpfApp1\\BigBase.Context.cs",
   "PreviewInSolutionExplorer": false
 }

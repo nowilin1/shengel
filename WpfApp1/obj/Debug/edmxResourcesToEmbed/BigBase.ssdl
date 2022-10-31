@@ -65,7 +65,7 @@
     <Property Name="ID_Заказа_материалов" Type="int" Nullable="false" />
     <Property Name="ID_Материалы" Type="int" />
     <Property Name="Тип_материала" Type="nvarchar(max)" />
-    <Property Name="Заказанное_кол-во_ед_материала" Type="nchar" MaxLength="10" />
+    <Property Name="Заказанное_кол_во_ед_материала" Type="nchar" MaxLength="10" />
     <Property Name="ID_Мастера" Type="int" />
   </EntityType>
   <EntityType Name="Заявка">
@@ -149,8 +149,10 @@
     </Key>
     <Property Name="ID_Поставщика" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Наименование" Type="nvarchar(max)" />
-    <Property Name="ИНН" Type="int" />
-    <Property Name="Тип_занятости" Type="nvarchar(max)" />
+    <Property Name="Тип_поставщика" Type="int" />
+    <Property Name="ИНН" Type="nchar" MaxLength="10" />
+    <Property Name="Рейтинг_качества" Type="nvarchar(max)" />
+    <Property Name="Дата_начала_работы_с_поставщиком" Type="date" />
   </EntityType>
   <EntityType Name="Предложение для агента">
     <Key>
