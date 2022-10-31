@@ -77,7 +77,7 @@ namespace WpfApp1
                     Рейтинг_качества = data[3],
                     Дата_начала_работы_с_поставщиком = DateTime.Parse(data[4])
                 };
-                foreach (var toursuppliner in data[3].Replace("в рейтинге", " ").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries))
+                foreach (var toursuppliner in data[3].Replace("в рейтинге", " ").Replace("Рейтинг ="," ").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries))
                 {
                     var currentType = bigbaseEntities.GetContext().Поставщик.ToList().FirstOrDefault(p => p.Наименование == toursuppliner);
                     //if (currentType != null)
