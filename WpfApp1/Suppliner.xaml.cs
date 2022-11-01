@@ -22,9 +22,18 @@ namespace WpfApp1
     {
         public Suppliner()
         {
-            var currentTours = bigbaseEntities.GetContext().Поставщик.ToList();
-            LViewTours.ItemsSource = currentTours;
             InitializeComponent();
+
+            var allTypes = bigbaseEntities.GetContext().Поставщик.ToList();
+            allTypes.Insert(0, new Поставщик
+            {
+                Наименование = "Все типы"
+            });
+
+            //ComboType.ItemsSource = allTypes;
+            //CheckActual.IsChecked = true;
+            //ComboType.SelectedIndex = 0;
+        }
         }
     }
-}
+   

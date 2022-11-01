@@ -149,7 +149,7 @@
     </Key>
     <Property Name="ID_Поставщика" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Наименование" Type="nvarchar(max)" />
-    <Property Name="Тип_поставщика" Type="int" />
+    <Property Name="Тип_поставщика" Type="nvarchar" MaxLength="50" />
     <Property Name="ИНН" Type="nchar" MaxLength="10" />
     <Property Name="Рейтинг_качества" Type="nvarchar(max)" />
     <Property Name="Дата_начала_работы_с_поставщиком" Type="date" />
@@ -189,7 +189,8 @@
       <PropertyRef Name="ID_Смены" />
     </Key>
     <Property Name="ID_Смены" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Время_начала_смены" Type="nvarchar(max)" />
+    <Property Name="Время_начала_смены" Type="nchar" MaxLength="10" />
+    <Property Name="Время_конца_смены" Type="nvarchar(max)" />
     <Property Name="ID_Мастера" Type="int" />
   </EntityType>
   <EntityType Name="Сотрудники">

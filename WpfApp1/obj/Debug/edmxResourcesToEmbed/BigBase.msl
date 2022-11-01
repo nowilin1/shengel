@@ -207,6 +207,7 @@
         <MappingFragment StoreEntitySet="Смена">
           <ScalarProperty Name="ID_Смены" ColumnName="ID_Смены" />
           <ScalarProperty Name="Время_начала_смены" ColumnName="Время_начала_смены" />
+          <ScalarProperty Name="Время_конца_смены" ColumnName="Время_конца_смены" />
           <ScalarProperty Name="ID_Мастера" ColumnName="ID_Мастера" />
         </MappingFragment>
       </EntityTypeMapping>

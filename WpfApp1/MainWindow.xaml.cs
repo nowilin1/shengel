@@ -28,7 +28,8 @@ namespace WpfApp1
             //var allTypes = bigbaseEntities.GetContext().Материалы.ToList();
             InitializeComponent();
             //MainFrame.Navigate(new Materials());
-            Manager.MainFrame = MainFrame;  
+            Manager.MainFrame = MainFrame;
+            ImportSuppliner();
 
         }
         public void ImportMaterials()
@@ -67,27 +68,25 @@ namespace WpfApp1
 
             foreach(var line in filedata)
             {
-                var data = line.Split('\t');
+                var data = line.Split(',');
                 var tempsuppliner = new Поставщик()
                 {
 
                     Наименование = data[0].Replace("\"", ""),
-                    Тип_поставщика = int.Parse(data[1]),
+                    Тип_поставщика = data[1],
                     ИНН = data[2],
-                    Рейтинг_качества = data[3],
-                    Дата_начала_работы_с_поставщиком = DateTime.Parse(data[4])
+                    Рейтинг_качества =data[3],
+                    Дата_начала_работы_с_поставщиком = DateTime.Parse(string.Format("{0:dd-mm-yyyy}", data[4]))
                 };
-                foreach (var toursuppliner in data[3].Replace("в рейтинге", " ").Replace("Рейтинг ="," ").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries))
+                foreach (var toursuppliner in data[3].Replace(" в рейтинге", " ").Replace(" Рейтинг ="," ").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries))
                 {
                     var currentType = bigbaseEntities.GetContext().Поставщик.ToList().FirstOrDefault(p => p.Наименование == toursuppliner);
-                    //if (currentType != null)
-                    //    tempsuppliner..Add(currentType);
                 }
                 bigbaseEntities.GetContext().Поставщик.Add(tempsuppliner);
                 bigbaseEntities.GetContext().SaveChanges();
             }
         }
-            private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
             {
                 Manager.MainFrame.GoBack();
             }

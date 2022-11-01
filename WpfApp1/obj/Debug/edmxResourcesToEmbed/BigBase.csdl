@@ -170,7 +170,7 @@
     </Key>
     <Property Name="ID_Поставщика" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Наименование" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Тип_поставщика" Type="Int32" />
+    <Property Name="Тип_поставщика" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ИНН" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Рейтинг_качества" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Дата_начала_работы_с_поставщиком" Type="DateTime" Precision="0" />
@@ -217,7 +217,8 @@
       <PropertyRef Name="ID_Смены" />
     </Key>
     <Property Name="ID_Смены" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Время_начала_смены" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Время_начала_смены" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Время_конца_смены" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ID_Мастера" Type="Int32" />
     <NavigationProperty Name="Мастер_производства" Relationship="Self.FK_Мастер_производства_Смена" FromRole="Смена" ToRole="Мастер_производства" />
     <NavigationProperty Name="Сотрудники" Relationship="Self.FK_Сотрудники_Смена" FromRole="Смена" ToRole="Сотрудники" />

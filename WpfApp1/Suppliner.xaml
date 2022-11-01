@@ -13,18 +13,14 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Name="LViewTours" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="20" Width="800">
-                        <TextBlock Text="{Binding Наименование}" Margin="5 5 5 15" VerticalAlignment="Top" TextAlignment="Right" Width="250"
-                                   TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="26" Grid.Row="1"  ></TextBlock>
-                        <TextBlock Text="{Binding Тип_поставщика}" Width="460" VerticalAlignment="Top" Grid.Row="1" Margin="5 5 5 15" HorizontalAlignment="Stretch" FontSize="26"></TextBlock>
-                        <TextBlock Text="{Binding ИНН}" Width="620" TextAlignment="Justify" VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Right" FontSize="17" Margin="5 5 5 70" ></TextBlock>
-                        <TextBlock Text="{Binding Дата_начала_работы_с_поставщиком}" Width="540" Margin="85" Grid.Row="1" HorizontalAlignment="Right" FontSize="17"></TextBlock>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <DataGrid x:Name="DGridSuppliner" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
+            <DataGrid.Columns>
+            <DataGridTextColumn Header="Наименование" Binding="{Binding Наименование}" Width="150"></DataGridTextColumn>
+            <DataGridTextColumn Header="Тип поставщика" Binding="{Binding Тип_поставщика}" Width="150"></DataGridTextColumn>
+            <DataGridTextColumn Header="ИНН" Binding="{Binding ИНН}" Width="100"></DataGridTextColumn>
+            <DataGridTextColumn Header="Рейтинг качеств" Binding="{Binding Рейтинг_качества}" Width="150"></DataGridTextColumn>
+            <DataGridTextColumn Header="Дата начала работы с поставщиком" Binding="{Binding Дата_начала_работы_с_поставщиком}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
