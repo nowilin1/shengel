@@ -27,15 +27,15 @@ namespace WpfApp1
 
             //var allTypes = bigbaseEntities.GetContext().Материалы.ToList();
             InitializeComponent();
-            //MainFrame.Navigate(new Materials());
+            MainFrame.Navigate(new knopki());
             Manager.MainFrame = MainFrame;
-            ImportSuppliner();
+            //ImportMaterials();
 
         }
         public void ImportMaterials()
         {
             var fileData = File.ReadAllLines(@"\\FSProfile1.biik.ad.biik.ru\Redirect\shengeliya\Desktop\Вариант 1\Материалы.txt");
-            var images = Directory.GetFiles(@"C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\materials\");
+            var images = Directory.GetFiles(@"\\FSProfile1.biik.ad.biik.ru\Redirect\shengeliya\Desktop\Вариант 1\Сессия 1\materials");
             foreach (var line in fileData)
             {
                 var data = line.Split('\t');
@@ -43,6 +43,7 @@ namespace WpfApp1
                 {
                     Наименование_материала = data[0].Replace("\"", ""),
                     Тип_материала = data[1],
+
                     Цена = decimal.Parse(data[3]),
                     Количество_на_складе = int.Parse(data[4]),
                     Минимальное_количество = int.Parse(data[5]),
@@ -68,20 +69,20 @@ namespace WpfApp1
 
             foreach(var line in filedata)
             {
-                var data = line.Split(',');
+                var data = line.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
                 var tempsuppliner = new Поставщик()
                 {
 
                     Наименование = data[0].Replace("\"", ""),
                     Тип_поставщика = data[1],
                     ИНН = data[2],
-                    Рейтинг_качества =data[3],
+                    Рейтинг_качества =data[3].Replace(" в рейтинге", "").Replace("Рейтинг = ",""),
                     Дата_начала_работы_с_поставщиком = DateTime.Parse(string.Format("{0:dd-mm-yyyy}", data[4]))
                 };
-                foreach (var toursuppliner in data[3].Replace(" в рейтинге", " ").Replace(" Рейтинг ="," ").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries))
-                {
-                    var currentType = bigbaseEntities.GetContext().Поставщик.ToList().FirstOrDefault(p => p.Наименование == toursuppliner);
-                }
+                //foreach (var toursuppliner in data[3].Replace(" в рейтинге", " ").Replace(" Рейтинг ="," ").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries))
+                //{
+                //    var currentType = bigbaseEntities.GetContext().Поставщик.ToList().FirstOrDefault(p => p.Наименование == toursuppliner);
+                //}
                 bigbaseEntities.GetContext().Поставщик.Add(tempsuppliner);
                 bigbaseEntities.GetContext().SaveChanges();
             }
@@ -90,7 +91,8 @@ namespace WpfApp1
             {
                 Manager.MainFrame.GoBack();
             }
-        private void MainFrame_ContentRendered(object sender, EventArgs e)
+
+        private void MainFrame_CR(object sender, EventArgs e)
         {
             if (MainFrame.CanGoBack)
             {
@@ -100,16 +102,6 @@ namespace WpfApp1
             {
                 ButtonBack.Visibility = Visibility.Hidden;
             }
-        }
-
-        private void ButtonMat_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MainFrame.Navigate(new Materials());
-        }
-
-        private void ButtonSuppliner_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MainFrame.Navigate(new Suppliner());
         }
     }
     }

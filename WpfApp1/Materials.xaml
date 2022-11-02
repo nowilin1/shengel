@@ -9,9 +9,25 @@
       Title="Materials">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto" MinHeight="74"></RowDefinition>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Введите наименование материала для поиска:" Width="175" TextAlignment="Right"></TextBlock>
+                <TextBox Width="225" Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Выберите тип сортировки:" Width="175" TextAlignment="Right"/>
+                <ComboBox  x:Name="ComboSort" SelectionChanged="ComboSort_SelectionChanged" Width="230"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Выберите тип материала:" Width="175" TextAlignment="Right"></TextBlock>
+                <ComboBox Width="225" Name="ComboType" SelectionChanged="ComboType_SelectionChanged" DisplayMemberPath="Name"></ComboBox>
+            </StackPanel>
+
+        </WrapPanel>
         <ListView Grid.Row="1" Name="LViewTours" >
             <!--<ListView.ItemsPanel>
                 <ItemsPanelTemplate>

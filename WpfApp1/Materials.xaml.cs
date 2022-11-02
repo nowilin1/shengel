@@ -23,24 +23,67 @@ namespace WpfApp1
         public Materials()
         {
             InitializeComponent();
+            var currentmat = bigbaseEntities.GetContext().Материалы.ToList();
+            LViewTours.ItemsSource = currentmat;
+            UpdateMaterials();
 
-            var currentTours = bigbaseEntities.GetContext().Материалы.ToList();
-            LViewTours.ItemsSource = currentTours;
+            ComboType.ItemsSource = new List<string> { "Все типы", "Гранулы", "Краски", "Нитки" };
+            ComboType.SelectedIndex = 0;
+
+            ComboSort.ItemsSource = new List<string> { "Все типы", "По названию", "Количеству на складе", "Минимальное количество в упаковке" };
+            ComboSort.SelectedIndex = 0;
         }
+        private void UpdateMaterials()
+        {
+            var currentmat = bigbaseEntities.GetContext().Материалы.ToList();
+
+            if (ComboType.SelectedIndex > 0)
+            {
+                currentmat = currentmat.Where(p => p.Тип_материала.Contains(ComboType.SelectedItem.ToString())).ToList();
+            }
+
+            currentmat = currentmat.Where(p => p.Наименование_материала.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+            if (ComboSort.SelectedIndex > 0)
+            {
+
+                if (ComboSort.SelectedItem.ToString() == "По названию")
+                {
+                    currentmat = currentmat.OrderBy(p => p.Наименование_материала).ToList();
+                }
+                else if (ComboSort.SelectedItem.ToString() == "Количеству на складе")
+                {
+                    currentmat = currentmat.OrderBy(p => p.Количество_на_складе).ToList();
+                }
+                else if (ComboSort.SelectedItem.ToString() == "Минимальное количество в упаковке")
+                {
+                    currentmat = currentmat.OrderBy(p => p.Минимальное_количество).ToList();
+                }
+
+            }
+
+            LViewTours.ItemsSource = currentmat;
+        }
+
 
         private void TBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
+            UpdateMaterials();
+        }
 
+
+        private void CheckActual_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateMaterials();
+        }
+
+        private void ComboSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateMaterials();
         }
 
         private void ComboType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-        }
-
-        private void CheckActual_Checked(object sender, RoutedEventArgs e)
-        {
-
+            UpdateMaterials();
         }
     }
 }

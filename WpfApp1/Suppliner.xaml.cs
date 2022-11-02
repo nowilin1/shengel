@@ -24,16 +24,38 @@ namespace WpfApp1
         {
             InitializeComponent();
 
-            var allTypes = bigbaseEntities.GetContext().Поставщик.ToList();
-            allTypes.Insert(0, new Поставщик
-            {
-                Наименование = "Все типы"
-            });
+            DGridSuppliner.ItemsSource = bigbaseEntities.GetContext().Поставщик.ToList();
+        }
 
-            //ComboType.ItemsSource = allTypes;
-            //CheckActual.IsChecked = true;
-            //ComboType.SelectedIndex = 0;
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new AddEditPage((sender as Button).DataContext as Поставщик));
         }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new AddEditPage(null));
         }
+
+        private void BtnDell_Click(object sender, RoutedEventArgs e)
+        {
+            var supplinerRemove = DGridSuppliner.SelectedItems.Cast<Поставщик>().ToList();
+            if (MessageBox.Show($"Вы точно хотите удалить следкющие {supplinerRemove.Count()} элементов?", "Внимание",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    bigbaseEntities.GetContext().Поставщик.RemoveRange(supplinerRemove);
+                    bigbaseEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные были успешно удалены!");
+                    DGridSuppliner.ItemsSource = bigbaseEntities.GetContext().Поставщик.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+    }
     }
    

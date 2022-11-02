@@ -44,3 +44,7 @@ C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\WpfApp1_Content.g.cs
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\Suppliner.g.cs
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\Suppliner.baml
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\knopki.g.cs
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\knopki.baml
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\AddEditPage.g.cs
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\AddEditPage.baml

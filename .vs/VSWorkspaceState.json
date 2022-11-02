@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\packages",
+    "\\WpfApp1",
     "\\WpfApp1\\Properties"
   ],
-  "SelectedNode": "\\BigBase.sln",
+  "SelectedNode": "\\WpfApp1\\Suppliner.xaml",
   "PreviewInSolutionExplorer": false
 }
