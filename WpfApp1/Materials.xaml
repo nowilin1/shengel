@@ -24,7 +24,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Выберите тип материала:" Width="175" TextAlignment="Right"></TextBlock>
-                <ComboBox Width="225" Name="ComboType" SelectionChanged="ComboType_SelectionChanged" DisplayMemberPath="Name"></ComboBox>
+                <ComboBox Width="225" Name="ComboType" SelectionChanged="ComboType_SelectionChanged" ></ComboBox>
             </StackPanel>
 
         </WrapPanel>

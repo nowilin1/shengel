@@ -40,7 +40,7 @@ namespace WpfApp1
         private void BtnDell_Click(object sender, RoutedEventArgs e)
         {
             var supplinerRemove = DGridSuppliner.SelectedItems.Cast<Поставщик>().ToList();
-            if (MessageBox.Show($"Вы точно хотите удалить следкющие {supplinerRemove.Count()} элементов?", "Внимание",
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {supplinerRemove.Count()} элементов?", "Внимание",
                     MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 try

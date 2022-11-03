@@ -27,7 +27,7 @@ namespace WpfApp1
 
             //var allTypes = bigbaseEntities.GetContext().Материалы.ToList();
             InitializeComponent();
-            MainFrame.Navigate(new knopki());
+            MainFrame.Navigate(new auto());
             Manager.MainFrame = MainFrame;
             //ImportMaterials();
 

@@ -189,8 +189,8 @@
       <PropertyRef Name="ID_Смены" />
     </Key>
     <Property Name="ID_Смены" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Время_начала_смены" Type="nchar" MaxLength="10" />
-    <Property Name="Время_конца_смены" Type="nvarchar(max)" />
+    <Property Name="Время_начала_смены" Type="date" />
+    <Property Name="Время_конца_смены" Type="date" />
     <Property Name="ID_Мастера" Type="int" />
   </EntityType>
   <EntityType Name="Сотрудники">
@@ -395,18 +395,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Мастер производства_Смена">
-    <End Role="Смена" Type="Self.Смена" Multiplicity="1" />
-    <End Role="Мастер производства" Type="Self.Мастер производства" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Смена">
-        <PropertyRef Name="ID_Смены" />
-      </Principal>
-      <Dependent Role="Мастер производства">
-        <PropertyRef Name="ID_Мастера" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Продукция_Поставщик">
     <End Role="Поставщик" Type="Self.Поставщик" Multiplicity="0..1" />
     <End Role="Продукция" Type="Self.Продукция" Multiplicity="*" />
@@ -428,6 +416,18 @@
       </Principal>
       <Dependent Role="Склад">
         <PropertyRef Name="ID_Продукции" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Смена_Мастер производства">
+    <End Role="Мастер производства" Type="Self.Мастер производства" Multiplicity="0..1" />
+    <End Role="Смена" Type="Self.Смена" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Мастер производства">
+        <PropertyRef Name="ID_Мастера" />
+      </Principal>
+      <Dependent Role="Смена">
+        <PropertyRef Name="ID_Мастера" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -594,10 +594,6 @@
       <End Role="Продукция" EntitySet="Продукция" />
       <End Role="Каталог готовой продукции" EntitySet="Каталог готовой продукции" />
     </AssociationSet>
-    <AssociationSet Name="FK_Мастер производства_Смена" Association="Self.FK_Мастер производства_Смена">
-      <End Role="Смена" EntitySet="Смена" />
-      <End Role="Мастер производства" EntitySet="Мастер производства" />
-    </AssociationSet>
     <AssociationSet Name="FK_Продукция_Поставщик" Association="Self.FK_Продукция_Поставщик">
       <End Role="Поставщик" EntitySet="Поставщик" />
       <End Role="Продукция" EntitySet="Продукция" />
@@ -605,6 +601,10 @@
     <AssociationSet Name="FK_Склад_Продукция" Association="Self.FK_Склад_Продукция">
       <End Role="Продукция" EntitySet="Продукция" />
       <End Role="Склад" EntitySet="Склад" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Смена_Мастер производства" Association="Self.FK_Смена_Мастер производства">
+      <End Role="Мастер производства" EntitySet="Мастер производства" />
+      <End Role="Смена" EntitySet="Смена" />
     </AssociationSet>
     <AssociationSet Name="FK_Сотрудники_Смена" Association="Self.FK_Сотрудники_Смена">
       <End Role="Смена" EntitySet="Смена" />

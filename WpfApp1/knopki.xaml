@@ -11,6 +11,7 @@
     <Grid>
         <Button x:Name="ButtonMat" Content="Материалы" HorizontalAlignment="Left" Margin="12,68,0,0" VerticalAlignment="Top" Foreground="White" Click="ButtonMat_Click"/>
         <Button x:Name="ButtonSuppliner" Content="Поставщик" HorizontalAlignment="Left" Margin="192,68,0,0" VerticalAlignment="Top" Foreground="White" Click="ButtonSuppliner_Click"/>
+        <Button x:Name="Buttonsmeni" Content="Смены" HorizontalAlignment="Left" Margin="372,68,0,0" VerticalAlignment="Top" Foreground="White" Click="Buttonsmeni_Click"/>
 
     </Grid>
 </Page>

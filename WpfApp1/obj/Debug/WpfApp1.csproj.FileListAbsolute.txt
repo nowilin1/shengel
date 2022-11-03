@@ -48,3 +48,9 @@ C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\knopki.g.cs
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\knopki.baml
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\AddEditPage.g.cs
 C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\AddEditPage.baml
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\smeni.g.cs
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\smeni.baml
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\AddEditSmeni.g.cs
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\AddEditSmeni.baml
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\auto.g.cs
+C:\Users\shengeliya\Source\Repos\shengel\WpfApp1\obj\Debug\auto.baml

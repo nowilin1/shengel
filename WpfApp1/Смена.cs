@@ -21,8 +21,8 @@ namespace WpfApp1
         }
     
         public int ID_Смены { get; set; }
-        public string Время_начала_смены { get; set; }
-        public string Время_конца_смены { get; set; }
+        public Nullable<System.DateTime> Время_начала_смены { get; set; }
+        public Nullable<System.DateTime> Время_конца_смены { get; set; }
         public Nullable<int> ID_Мастера { get; set; }
     
         public virtual Мастер_производства Мастер_производства { get; set; }

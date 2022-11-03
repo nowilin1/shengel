@@ -34,5 +34,10 @@ namespace WpfApp1
         {
             Manager.MainFrame.Navigate(new Suppliner());
         }
+
+        private void Buttonsmeni_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new smeni());
+        }
     }
 }

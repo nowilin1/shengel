@@ -136,7 +136,7 @@
     <Property Name="Дата_рождения" Type="DateTime" Precision="0" />
     <Property Name="Стаж" Type="Int32" />
     <NavigationProperty Name="Заказ_материалов" Relationship="Self.FK_Заказ_материалов_Мастер_производства" FromRole="Мастер_производства" ToRole="Заказ_материалов" />
-    <NavigationProperty Name="Смена" Relationship="Self.FK_Мастер_производства_Смена" FromRole="Мастер_производства" ToRole="Смена" />
+    <NavigationProperty Name="Смена" Relationship="Self.FK_Смена_Мастер_производства" FromRole="Мастер_производства" ToRole="Смена" />
   </EntityType>
   <EntityType Name="Материалы">
     <Key>
@@ -217,10 +217,10 @@
       <PropertyRef Name="ID_Смены" />
     </Key>
     <Property Name="ID_Смены" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Время_начала_смены" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="Время_конца_смены" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Время_начала_смены" Type="DateTime" Precision="0" />
+    <Property Name="Время_конца_смены" Type="DateTime" Precision="0" />
     <Property Name="ID_Мастера" Type="Int32" />
-    <NavigationProperty Name="Мастер_производства" Relationship="Self.FK_Мастер_производства_Смена" FromRole="Смена" ToRole="Мастер_производства" />
+    <NavigationProperty Name="Мастер_производства" Relationship="Self.FK_Смена_Мастер_производства" FromRole="Смена" ToRole="Мастер_производства" />
     <NavigationProperty Name="Сотрудники" Relationship="Self.FK_Сотрудники_Смена" FromRole="Смена" ToRole="Сотрудники" />
   </EntityType>
   <EntityType Name="Сотрудники">
@@ -435,14 +435,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Мастер_производства_Смена">
-    <End Role="Смена" Type="Self.Смена" Multiplicity="1" />
+  <Association Name="FK_Смена_Мастер_производства">
     <End Role="Мастер_производства" Type="Self.Мастер_производства" Multiplicity="0..1" />
+    <End Role="Смена" Type="Self.Смена" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Смена">
-        <PropertyRef Name="ID_Смены" />
+      <Principal Role="Мастер_производства">
+        <PropertyRef Name="ID_Мастера" />
       </Principal>
-      <Dependent Role="Мастер_производства">
+      <Dependent Role="Смена">
         <PropertyRef Name="ID_Мастера" />
       </Dependent>
     </ReferentialConstraint>
@@ -603,9 +603,9 @@
       <End Role="Продукция" EntitySet="Продукция" />
       <End Role="Каталог_готовой_продукции" EntitySet="Каталог_готовой_продукции" />
     </AssociationSet>
-    <AssociationSet Name="FK_Мастер_производства_Смена" Association="Self.FK_Мастер_производства_Смена">
-      <End Role="Смена" EntitySet="Смена" />
+    <AssociationSet Name="FK_Смена_Мастер_производства" Association="Self.FK_Смена_Мастер_производства">
       <End Role="Мастер_производства" EntitySet="Мастер_производства" />
+      <End Role="Смена" EntitySet="Смена" />
     </AssociationSet>
     <AssociationSet Name="FK_Продукция_Поставщик" Association="Self.FK_Продукция_Поставщик">
       <End Role="Поставщик" EntitySet="Поставщик" />
